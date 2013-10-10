@@ -1,0 +1,14 @@
+
+
+= semantic_form_for [:admin, @unit] do |f|
+  = f.inputs do
+    -[:package, :name, :description, :movement_speed, :health_points].each do |type|
+      = f.input type
+    
+    -['melee', 'range'].each do |type|
+      = f.input "#{type}_attack"
+      = f.input "#{type}_attack_speed"
+      = f.input "#{type}_attack_power_min"
+      = f.input "#{type}_attack_power_max"
+      = f.input "#{type}_attack_range"
+  = f.actions

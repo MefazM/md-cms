@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007204656) do
+ActiveRecord::Schema.define(version: 20131010112733) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -51,13 +51,19 @@ ActiveRecord::Schema.define(version: 20131007204656) do
     t.string   "name"
     t.string   "description"
     t.float    "movement_speed"
-    t.integer  "attack_speed"
-    t.integer  "attack_power_min"
-    t.float    "attack_range"
+    t.integer  "melee_attack_speed"
+    t.integer  "melee_attack_power_min"
+    t.float    "melee_attack_range"
     t.integer  "health_points"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "attack_power_max"
+    t.integer  "melee_attack_power_max"
+    t.boolean  "range_attack"
+    t.boolean  "melee_attack"
+    t.integer  "range_attack_power_max"
+    t.integer  "range_attack_power_min"
+    t.float    "range_attack_range"
+    t.integer  "range_attack_speed"
   end
 
   add_index "units", ["name"], name: "index_units_on_name", unique: true, using: :btree
