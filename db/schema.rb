@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131010112733) do
+ActiveRecord::Schema.define(version: 20131010125020) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20131010112733) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "melee_attack_power_max"
-    t.boolean  "range_attack"
-    t.boolean  "melee_attack"
+    t.boolean  "range_attack",           default: false
+    t.boolean  "melee_attack",           default: false
     t.integer  "range_attack_power_max"
     t.integer  "range_attack_power_min"
     t.float    "range_attack_range"
