@@ -4,11 +4,14 @@
   = f.inputs do
     -[:package, :name, :description, :movement_speed, :health_points].each do |type|
       = f.input type
-    
-    -['melee', 'range'].each do |type|
-      = f.input "#{type}_attack"
-      = f.input "#{type}_attack_speed"
-      = f.input "#{type}_attack_power_min"
-      = f.input "#{type}_attack_power_max"
-      = f.input "#{type}_attack_range"
+    - attack_types =  Unit::ATTACK_TYPES.map { |key, value| [value, key] }
+    = f.input :resist_type, :as => :select, :collection => attack_types
+    -['melee_attack', 'range_attack'].each do |type|
+      = f.input "#{type}"
+      = f.input "#{type}_speed"
+      = f.input "#{type}_power_min"
+      = f.input "#{type}_power_max"
+      = f.input "#{type}_range"
+      = f.input "#{type}_damage_type", :as => :select, :collection => attack_types
+
   = f.actions
