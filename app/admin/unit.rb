@@ -6,6 +6,7 @@ ActiveAdmin.register Unit do
   index do
     selectable_column
 
+    column :package
     column :name
     column :health_points
     column :movement_speed
