@@ -5,7 +5,7 @@ class Unit < ActiveRecord::Base
   attr_accessible :package, :name, :description, :movement_speed, :melee_attack_speed, :melee_attack_power_min, 
                   :melee_attack_range, :health_points, :melee_attack_power_max, :range_attack, :melee_attack, 
                   :range_attack_power_max, :range_attack_power_min, :range_attack_range, :range_attack_speed,
-                  :resist_type
+                  :resist_type, :melee_attack_damage_type, :range_attack_damage_type
 
   ATTACK_TYPES = {
     1 => :arrow,
