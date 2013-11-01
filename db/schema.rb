@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016162310) do
+ActiveRecord::Schema.define(version: 20131030141611) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -52,6 +52,30 @@ ActiveRecord::Schema.define(version: 20131016162310) do
     t.string  "token"
   end
 
+  create_table "buildings", force: true do |t|
+    t.string  "name"
+    t.string  "description"
+    t.integer "level"
+    t.string  "package"
+  end
+
+  add_index "buildings", ["level", "package"], name: "index_buildings_on_level_and_package", unique: true, using: :btree
+
+  create_table "deferred_tasks", force: true do |t|
+    t.integer "user_id"
+    t.integer "finish_time"
+    t.integer "resource_id"
+    t.string  "resource_type"
+  end
+
+  create_table "deferred_tasks_with_sequences", force: true do |t|
+    t.integer "producer_id"
+    t.integer "production_time"
+    t.string  "resource_id",     limit: 32
+    t.integer "resource_type"
+    t.integer "player_id"
+  end
+
   create_table "players", force: true do |t|
     t.string "email"
     t.string "username"
@@ -69,8 +93,8 @@ ActiveRecord::Schema.define(version: 20131016162310) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "melee_attack_power_max"
-    t.boolean  "range_attack",             default: false
-    t.boolean  "melee_attack",             default: false
+    t.boolean  "range_attack",                default: false
+    t.boolean  "melee_attack",                default: false
     t.integer  "range_attack_power_max"
     t.integer  "range_attack_power_min"
     t.float    "range_attack_range"
@@ -78,6 +102,8 @@ ActiveRecord::Schema.define(version: 20131016162310) do
     t.integer  "resist_type"
     t.integer  "melee_attack_damage_type"
     t.integer  "range_attack_damage_type"
+    t.string   "depends_on_building_package"
+    t.integer  "depends_on_building_level"
   end
 
   add_index "units", ["name"], name: "index_units_on_name", unique: true, using: :btree

@@ -14,4 +14,10 @@
       = f.input "#{type}_range"
       = f.input "#{type}_damage_type", :as => :select, :collection => attack_types
 
+    - building_packages = Building.all.pluck(:package).uniq
+    = f.input :depends_on_building_package, :as => :select, :collection => building_packages
+
+    = f.input :depends_on_building_level, :as => :select, :collection  => (1...5).each { |i|  }, :include_blank => false
+
+
   = f.actions
