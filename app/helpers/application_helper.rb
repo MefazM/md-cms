@@ -2,6 +2,8 @@ module ApplicationHelper
   def export_buildings buildings
     buildings_grouped = {}
 
+    units_grouped = {}
+
     buildings.each do |building|
       package = building.package
 
@@ -10,8 +12,12 @@ module ApplicationHelper
       buildings_grouped[package][building.level][:building_info] = building
 
       units = Unit.depended_on(package, building.level)
-
       buildings_grouped[package][building.level][:units_info] = units unless units.empty?
+
+      unless units.empty?
+        units_grouped[package] = [] if units_grouped[package].nil?
+        units.map { |u| units_grouped[package] << {:package => u.package, :level => u.depends_on_building_level}}
+      end
 
       updateable = building.updateable_to
       buildings_grouped[package][building.level][:updateable_to] = updateable if updateable
@@ -19,72 +25,81 @@ module ApplicationHelper
 
     results = []
 
-    results << "--\n-- Buildings. Exported @ #{DateTime.now}\n--\n"
-    results << "-- BUILDINGS\n\n"
-    results << "local buildings = {}\n\n"
+    results << "--\r-- Game data. Exported @#{DateTime.now}\r--\r"
+    results << "-- UNITS\r\r"
+    results << "local units = {}\r"
+    units_grouped.each do |package, units|
+      results << "units['#{package}'] = {}\r"
+      units.each_with_index do |unit, index|
+        results << "units['#{package}'][#{index + 1}] = { package = '#{unit[:package]}', level = #{unit[:level]} }\r"
+      end
+    end
+
+    results << "-- BUILDINGS\r\r"
+    results << "local buildings = {}\r\r"
 
     buildings_grouped.each do |package, buildings|
-      results << "buildings['#{package}'] = {}\n"
+      results << "buildings['#{package}'] = {}\r"
       buildings.each do |level, building|
         info = building[:building_info]
         actions = ['info = true']
-        results << "buildings['#{package}'][#{level}] = { name = '#{info.name}', description = '#{info.description}', level = #{info.level} }\n"
+        results << "buildings['#{package}'][#{level}] = { name = '#{info.name}', description = '#{info.description}', level = #{info.level} }\r"
 
         if building[:units_info]
           actions << 'units = true'
-          results << "buildings['#{package}'][#{level}].units = {}\n"
+          results << "buildings['#{package}'][#{level}].units = {}\r"
           building[:units_info].each_with_index do |unit, index|
-            results << "buildings['#{package}'][#{level}].units[#{index+1}] = #{unit.export}\n"
+            results << "buildings['#{package}'][#{level}].units[#{index+1}] = #{unit.export}\r"
           end
         end
 
         updateable_to = building[:updateable_to]
-        results << "buildings['#{package}'][#{level}].updateable = #{updateable_to.nil? ? false : true}\n"
+        results << "buildings['#{package}'][#{level}].updateable = #{updateable_to.nil? ? false : true}\r"
         actions << 'build = true' unless updateable_to.nil?
         # unless updateable_to.nil?
         #   actions << '\'build\''
-        #   results << "buildings['#{package}'][#{level}].updateable_to = '#{updateable_to.package}'\n"
+        #   results << "buildings['#{package}'][#{level}].updateable_to = '#{updateable_to.package}'\r"
         # end
 
-        results << "buildings['#{package}'][#{level}].actions = {#{actions.join(', ')}}\n"
+        results << "buildings['#{package}'][#{level}].actions = {#{actions.join(', ')}}\r"
       end
-      results << "\n"
+      results << "\r"
     end
-    results << "-- /BUILDINGS\n"
-    results << "local self = {}\n"
+    results << "-- /BUILDINGS\r"
+    results << "local self = {}\r"
 
-    results << "-- SPAWNINGS\n\n"
+    results << "-- SPAWNINGS\r\r"
     results << "
-    local spawnings = {\n
-      { x = 512, y = 512, package = 'buildings.armory', default_desc = 'Here should be an armory', actions = {info = true, build = true}},\n
-      { x = 412, y = 612, package = 'buildings.barrack', default_desc = 'Here should be barrack', actions = {info = true, build = true}},\n
+    local spawnings = {\r
+      { x = 512, y = 512, package = 'buildings.armory', default_desc = 'Here should be an armory', actions = {info = true, build = true}},\r
+      { x = 412, y = 612, package = 'buildings.barrack', default_desc = 'Here should be barrack', actions = {info = true, build = true}},\r
       { x = 612, y = 550, package = 'buildings.castle', default_desc = 'Here should someshing else', actions = {info = true, build = true}}
     }
-    \n"
-    results << "function self:getSpawnings()\n
-      return spawnings\n
-    end\n
+    \r"
+    results << "function self:getSpawnings()\r
+      return spawnings\r
+    end\r
     "
-    results << "-- /SPAWNINGS\n"
+    results << "-- /SPAWNINGS\r"
 
-    results << "-- DEFAULT ACTIONS\n\n"
-    results << "local default_actions = {}\n
+    results << "-- DEFAULT ACTIONS\r\r"
+    results << "local default_actions = {}\r
     default_actions['buildings.armory'] = {info = true, build = true}
     default_actions['buildings.barrack'] = {info = true, build = true}
-    default_actions['buildings.castle'] = {info = true, build = true}\n"
-    results << "function self:getDefaultAction( package )\n
+    default_actions['buildings.castle'] = {info = true, build = true}\r"
+    results << "function self:getDefaultAction( package )\r
       return default_actions[package]
     end
     "
-    results << "-- /DEFAULT ACTIONS\n"
+    results << "-- /DEFAULT ACTIONS\r"
 
-    results << "-- DEFAULT DESCRIPTIONS\n\n"
-    results << "local default_descriptions = {}\n
+    results << "-- DEFAULT DESCRIPTIONS\r\r"
+    results << "local default_descriptions = {}\r
       default_descriptions['buildings.armory'] = 'Here should be an armory'
       default_descriptions['buildings.barrack'] = 'Here should be barrack'
-      default_descriptions['buildings.castle'] = 'Here should someshing else'\n"
+      default_descriptions['buildings.castle'] = 'Here should someshing else'\r"
 
-    results << "function self:getDescription( package, level )\n
+    results << "function self:getDescription( package, level )\r
       if level == 0 then
         return default_descriptions[package]
       else
@@ -92,10 +107,9 @@ module ApplicationHelper
       end
     end
     "
-    results << "-- /DEFAULT DESCRIPTIONS\n"
-
-    results << "function self:getBuildingInfo( package, level )\n\treturn buildings[package][level]\nend\nfunction self:getBuildingActions( package, level )\n\treturn buildings[package][level].actions\nend\nreturn self\n"
-
-    results.join()
+    results << "-- /DEFAULT DESCRIPTIONS\r"
+    results << "function self:getUnits()\r\treturn units\rend\r"
+    results << "function self:getBuildingInfo( package, level )\r\treturn buildings[package][level]\rend\rfunction self:getBuildingActions( package, level )\r\treturn buildings[package][level].actions\rend\rreturn self\r"
+    results.join('')
   end
 end
