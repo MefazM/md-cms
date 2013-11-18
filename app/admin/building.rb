@@ -8,6 +8,7 @@ ActiveAdmin.register Building do
     column :name
     column :package
     column :level
+    column :production_time
 
     default_actions
 

@@ -1,7 +1,7 @@
 
 = semantic_form_for [:admin, @building] do |f|
   = f.inputs do
-    -[:package, :name, :description].each do |type|
+    -[:package, :name, :description, :production_time].each do |type|
       = f.input type
     - attack_types =  Unit::ATTACK_TYPES.map { |key, value| [value, key] }
     = f.input :level, :as => :select, :collection => (1...5).each { |i|  }, :include_blank => false

@@ -34,6 +34,11 @@ module ApplicationHelper
         results << "units['#{package}'][#{index + 1}] = { package = '#{unit[:package]}', level = #{unit[:level]} }\r"
       end
     end
+    results << "local units_data = {}\r"
+    Unit.all.each do |unit|
+      results << "units_data['#{unit.package}'] = {}\r"
+      results << "units_data['#{unit.package}'] = #{unit.export}\r"
+    end
 
     results << "-- BUILDINGS\r\r"
     results << "local buildings = {}\r\r"
@@ -47,10 +52,10 @@ module ApplicationHelper
 
         if building[:units_info]
           actions << 'units = true'
-          results << "buildings['#{package}'][#{level}].units = {}\r"
-          building[:units_info].each_with_index do |unit, index|
-            results << "buildings['#{package}'][#{level}].units[#{index+1}] = #{unit.export}\r"
-          end
+          # results << "buildings['#{package}'][#{level}].units = {}\r"
+          # building[:units_info].each_with_index do |unit, index|
+          #   results << "buildings['#{package}'][#{level}].units[#{index+1}] = #{unit.export}\r"
+          # end
         end
 
         updateable_to = building[:updateable_to]
@@ -109,6 +114,7 @@ module ApplicationHelper
     "
     results << "-- /DEFAULT DESCRIPTIONS\r"
     results << "function self:getUnits()\r\treturn units\rend\r"
+    results << "function self:getUnitInfo( package )\r\treturn units_data[package]\rend\r"
     results << "function self:getBuildingInfo( package, level )\r\treturn buildings[package][level]\rend\rfunction self:getBuildingActions( package, level )\r\treturn buildings[package][level].actions\rend\rreturn self\r"
     results.join('')
   end

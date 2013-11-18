@@ -13,6 +13,8 @@ ActiveAdmin.register Unit do
     column :range_attack
     column :melee_attack
 
+    column :production_time
+
     column :resist_type do |unit|
       unit.resist_type.nil? ? 'none' : Unit::ATTACK_TYPES[unit.resist_type]
     end
