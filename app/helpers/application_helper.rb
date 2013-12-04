@@ -76,9 +76,9 @@ module ApplicationHelper
     results << "-- SPAWNINGS\r\r"
     results << "
     local spawnings = {\r
-      { x = 512, y = 512, package = 'buildings.armory', default_desc = 'Here should be an armory', actions = {info = true, build = true}},\r
-      { x = 412, y = 612, package = 'buildings.barrack', default_desc = 'Here should be barrack', actions = {info = true, build = true}},\r
-      { x = 612, y = 550, package = 'buildings.castle', default_desc = 'Here should someshing else', actions = {info = true, build = true}}
+      { x = 750, y = 640, package = 'buildings.mage_barrack', default_desc = 'Here should be an armory', actions = {info = true, build = true}},
+      { x = 860, y = 600, package = 'buildings.barrack', default_desc = 'Here should be barrack', actions = {info = true, build = true}},
+      { x = 840, y = 770, package = 'buildings.bow_barrack', default_desc = 'Here should someshing else', actions = {info = true, build = true}}
     }
     \r"
     results << "function self:getSpawnings()\r
@@ -89,9 +89,9 @@ module ApplicationHelper
 
     results << "-- DEFAULT ACTIONS\r\r"
     results << "local default_actions = {}\r
-    default_actions['buildings.armory'] = {info = true, build = true}
+    default_actions['buildings.mage_barrack'] = {info = true, build = true}
     default_actions['buildings.barrack'] = {info = true, build = true}
-    default_actions['buildings.castle'] = {info = true, build = true}\r"
+    default_actions['buildings.bow_barrack'] = {info = true, build = true}\r"
     results << "function self:getDefaultAction( package )\r
       return default_actions[package]
     end
@@ -100,9 +100,9 @@ module ApplicationHelper
 
     results << "-- DEFAULT DESCRIPTIONS\r\r"
     results << "local default_descriptions = {}\r
-      default_descriptions['buildings.armory'] = 'Here should be an armory'
-      default_descriptions['buildings.barrack'] = 'Here should be barrack'
-      default_descriptions['buildings.castle'] = 'Here should someshing else'\r"
+    default_descriptions['buildings.mage_barrack'] = 'Here should be an armory'
+    default_descriptions['buildings.barrack'] = 'Here should be barrack'
+    default_descriptions['buildings.bow_barrack'] = 'Here should someshing else'\r"
 
     results << "function self:getDescription( package, level )\r
       if level == 0 then

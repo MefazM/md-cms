@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115153017) do
+ActiveRecord::Schema.define(version: 20131201194948) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 20131115153017) do
     t.string "email"
     t.string "username"
   end
+
+  create_table "spells", force: true do |t|
+    t.integer "charges"
+    t.string  "uid"
+    t.integer "reaction_time"
+    t.integer "power"
+    t.string  "description"
+    t.integer "area"
+  end
+
+  add_index "spells", ["uid"], name: "index_spells_on_uid", unique: true, using: :btree
 
   create_table "units", force: true do |t|
     t.string   "package"
