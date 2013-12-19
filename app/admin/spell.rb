@@ -1,7 +1,7 @@
 ActiveAdmin.register Spell do
   config.filters = false
 
-  index do
+  index :download_links => false do
     selectable_column
 
     column :uid

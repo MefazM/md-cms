@@ -1,12 +1,12 @@
 class Unit < ActiveRecord::Base
 
-  validates_presence_of :package, :name, :description, :movement_speed,
+  validates_presence_of :uid, :name, :description, :movement_speed,
                         :health_points, :production_time
 
-  attr_accessible :package, :name, :description, :movement_speed, :melee_attack_speed, :melee_attack_power_min,
+  attr_accessible :uid, :name, :description, :movement_speed, :melee_attack_speed, :melee_attack_power_min,
                   :melee_attack_range, :health_points, :melee_attack_power_max, :range_attack, :melee_attack,
                   :range_attack_power_max, :range_attack_power_min, :range_attack_range, :range_attack_speed,
-                  :resist_type, :melee_attack_damage_type, :range_attack_damage_type, :depends_on_building_package,
+                  :resist_type, :melee_attack_damage_type, :range_attack_damage_type, :depends_on_building_uid,
                   :depends_on_building_level, :production_time
 
   ATTACK_TYPES = {
@@ -17,13 +17,13 @@ class Unit < ActiveRecord::Base
     5 => :fists
   }
 
-  def self.depended_on ( package, level )
-    Unit.where(:depends_on_building_package => package, :depends_on_building_level => level)
+  def self.depended_on ( uid, level )
+    Unit.where(:depends_on_building_uid => uid, :depends_on_building_level => level)
   end
 
   def export()
     results = []
-    [:package, :name, :description, :health_points, :movement_speed, :production_time].each do |attr|
+    [:uid, :name, :description, :health_points, :movement_speed, :production_time].each do |attr|
       results << "#{attr.to_s} = '#{self.send(attr)}'"
     end
 

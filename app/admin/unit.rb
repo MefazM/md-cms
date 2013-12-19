@@ -3,10 +3,10 @@ ActiveAdmin.register Unit do
 
   form :partial => "form"
 
-  index do
+  index :download_links => false do
     selectable_column
 
-    column :package
+    column :uid
     column :name
     column :health_points
     column :movement_speed
@@ -28,8 +28,8 @@ ActiveAdmin.register Unit do
     end
 
     column 'Depends on' do |unit|
-      if unit.depends_on_building_package
-        "#{unit.depends_on_building_package}_#{unit.depends_on_building_level}lvl."
+      if unit.depends_on_building_uid
+        "#{unit.depends_on_building_uid}_#{unit.depends_on_building_level}lvl."
       end
     end
 

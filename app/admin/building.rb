@@ -2,11 +2,11 @@ ActiveAdmin.register Building do
   config.filters = false
   config.batch_actions = false
 
-  index do
+  index :download_links => false do
 
     selectable_column
     column :name
-    column :package
+    column :uid
     column :level
     column :production_time
 
@@ -21,7 +21,7 @@ ActiveAdmin.register Building do
   # index do
   #   selectable_column
 
-  #   column :package
+  #   column :uid
   #   column :name
   #   column :health_points
   #   column :movement_speed

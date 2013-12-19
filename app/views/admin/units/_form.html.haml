@@ -2,7 +2,7 @@
 
 = semantic_form_for [:admin, @unit] do |f|
   = f.inputs do
-    -[:package, :name, :description, :movement_speed, :health_points, :production_time].each do |type|
+    -[:uid, :name, :description, :movement_speed, :health_points, :production_time].each do |type|
       = f.input type
     - attack_types =  Unit::ATTACK_TYPES.map { |key, value| [value, key] }
     = f.input :resist_type, :as => :select, :collection => attack_types
@@ -14,8 +14,8 @@
       = f.input "#{type}_range"
       = f.input "#{type}_damage_type", :as => :select, :collection => attack_types
 
-    - building_packages = Building.all.pluck(:package).uniq
-    = f.input :depends_on_building_package, :as => :select, :collection => building_packages
+    - building_uids = Building.all.pluck(:uid).uniq
+    = f.input :depends_on_building_uid, :as => :select, :collection => building_uids
 
     = f.input :depends_on_building_level, :as => :select, :collection  => (1...5).each { |i|  }, :include_blank => false
 
