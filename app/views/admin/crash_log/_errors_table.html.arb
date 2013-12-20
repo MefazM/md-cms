@@ -1,0 +1,26 @@
+
+h1 "Player #{player.username}"
+
+errors.each do |error|
+
+  h2 error.error_message
+  div do
+    pre error.stack_trace
+  end
+
+  attributes_table_for error do
+    row :texture_memory do
+      error.memory
+    end
+    row :model
+    row :name
+    row :architecture_info
+    row :app_version_string
+    row :max_texture_size
+    row :platform_name
+    row :created_at
+  end
+
+  hr
+
+end

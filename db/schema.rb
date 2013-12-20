@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20131219160942) do
     t.string   "max_texture_size"
     t.string   "platform_name"
     t.boolean  "unread",             default: true
+    t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
