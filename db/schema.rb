@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131219160942) do
+ActiveRecord::Schema.define(version: 20140116111312) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20131219160942) do
     t.integer "finish_time"
     t.integer "production_time"
     t.integer "resource_id"
-    t.string  "uid"
+    t.string  "package"
     t.integer "level"
   end
 
@@ -94,6 +94,11 @@ ActiveRecord::Schema.define(version: 20131219160942) do
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "game_settings", force: true do |t|
+    t.text   "value"
+    t.string "key"
   end
 
   create_table "players", force: true do |t|

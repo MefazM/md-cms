@@ -11,7 +11,6 @@ gem 'jbuilder'
 gem 'haml-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-
 group :development, :test do
   gem 'pry'
   gem 'pry-stack_explorer'

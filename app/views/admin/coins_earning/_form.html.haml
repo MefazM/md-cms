@@ -1,0 +1,44 @@
+%form{:action => admin_coins_earning_update_path, :method => :post}
+  %input{:name => 'authenticity_token', :type => :hidden, :value => form_authenticity_token.to_s}
+  %fieldset
+    %legend Coin generator building:
+    %select#buiding-uid{:name => :coin_generator_uid}
+      -Building.all.each do |building|
+        -selected = settings[:coin_generator_uid][:value] == building.uid
+        %option{:value => building.uid, :selected => selected}=building.name
+
+  %fieldset
+    %legend Amount per level:
+    %table
+      %thead
+        %th Level
+        %th Amount per second
+        %th Max harvest capacity
+      -settings[:coins_generation_per_level][:value].each_with_index do |value, index|
+        %tr
+          %td="##{index}"
+          %td
+            %input{:name => :"coins_generation_per_level[][amount]", :value => value['amount']}
+          %td
+            %input{:name => :"coins_generation_per_level[][harvest_capacity]", :value => value['harvest_capacity']}
+
+  %fieldset
+    %legend Storage building:
+    %select#buiding-uid{:name => :storage_building_uid}
+      -Building.all.each do |building|
+        -selected = settings[:storage_building_uid][:value] == building.uid
+        %option{:value => building.uid, :selected => selected}=building.name
+
+  %fieldset
+    %legend Storage capacity per level:
+    %table
+      %thead
+        %th Level
+        %th Capacity
+      -settings[:storage_capacity_per_level][:value].each_with_index do |value, index|
+        %tr
+          %td="##{index}"
+          %td
+            %input{:name => :"storage_capacity_per_level[][amount]", :value => value['amount']}
+
+  %input{:type => :submit, :value => 'save'}
