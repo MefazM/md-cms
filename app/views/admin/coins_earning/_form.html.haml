@@ -3,9 +3,9 @@
   %fieldset
     %legend Coin generator building:
     %select#buiding-uid{:name => :coin_generator_uid}
-      -Building.all.each do |building|
+      -Building.select(:uid).uniq.each do |building|
         -selected = settings[:coin_generator_uid][:value] == building.uid
-        %option{:value => building.uid, :selected => selected}=building.name
+        %option{:value => building.uid, :selected => selected}=building.uid
 
   %fieldset
     %legend Amount per level:
@@ -25,9 +25,9 @@
   %fieldset
     %legend Storage building:
     %select#buiding-uid{:name => :storage_building_uid}
-      -Building.all.each do |building|
+      -Building.select(:uid).uniq.each do |building|
         -selected = settings[:storage_building_uid][:value] == building.uid
-        %option{:value => building.uid, :selected => selected}=building.name
+        %option{:value => building.uid, :selected => selected}=building.uid
 
   %fieldset
     %legend Storage capacity per level:
