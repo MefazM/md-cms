@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder'
 gem 'haml-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'unicorn'
 
 group :development, :test do
   gem 'pry'
