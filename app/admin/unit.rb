@@ -8,6 +8,7 @@ ActiveAdmin.register Unit do
 
     column :uid
     column :name
+    column :price
     column :health_points
     column :movement_speed
     column :range_attack
@@ -28,7 +29,7 @@ ActiveAdmin.register Unit do
     end
 
     column 'Depends on' do |unit|
-      if unit.depends_on_building_uid
+      unless unit.depends_on_building_uid.blank?
         "#{unit.depends_on_building_uid}_#{unit.depends_on_building_level}lvl."
       end
     end
