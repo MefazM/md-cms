@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140120135320) do
+ActiveRecord::Schema.define(version: 20140213132054) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -109,12 +109,15 @@ ActiveRecord::Schema.define(version: 20140120135320) do
   end
 
   create_table "spells", force: true do |t|
-    t.integer "charges"
     t.string  "uid"
-    t.integer "reaction_time"
-    t.integer "power"
-    t.string  "description"
-    t.integer "area"
+    t.integer "time"
+    t.integer "value"
+    t.text    "description"
+    t.float   "area"
+    t.string  "target_type"
+    t.integer "mana_cost"
+    t.string  "ability_preset"
+    t.string  "processing_type"
   end
 
   add_index "spells", ["uid"], name: "index_spells_on_uid", unique: true, using: :btree
