@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213132054) do
+ActiveRecord::Schema.define(version: 20140225131002) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -111,16 +111,21 @@ ActiveRecord::Schema.define(version: 20140213132054) do
   create_table "spells", force: true do |t|
     t.string  "uid"
     t.integer "time"
-    t.integer "value"
     t.text    "description"
     t.float   "area"
-    t.string  "target_type"
     t.integer "mana_cost"
-    t.string  "ability_preset"
-    t.string  "processing_type"
+    t.string  "name"
   end
 
   add_index "spells", ["uid"], name: "index_spells_on_uid", unique: true, using: :btree
+
+  create_table "spells_attrs", force: true do |t|
+    t.integer  "spell_id"
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "units", force: true do |t|
     t.string   "uid"

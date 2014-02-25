@@ -24,3 +24,15 @@
     margin-bottom: 5px;
   }
 }
+
+.spells-attrs {
+  label {
+    width: 250px;
+    display: block;
+
+    input {
+      width: 300px;
+      display: block;
+    }
+  }
+}

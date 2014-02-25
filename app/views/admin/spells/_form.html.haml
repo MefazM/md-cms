@@ -1,0 +1,26 @@
+:javascript
+  $(window).load(function() {
+    new SpellsForm();
+  });
+
+= semantic_form_for [:admin, @spell] do |f|
+
+  = f.inputs "UID" do
+    - spells_collection = @spell.new_record? ? Spell.not_configured_uids : Spell.uids
+    = f.input :uid, :as => :select, :collection => spells_collection
+
+  = f.inputs "Settings" do
+    - [:description, :mana_cost, :name, :area, :time].each do |field|
+      = f.input field
+
+  = f.inputs "Spell attributes" do
+
+    = f.fields_for :spells_attrs do |builder|
+      = render("spells_attr_fields", f: builder)
+
+    #nested-forms
+
+    = link_to_add_fields "Add Attr", f, :spells_attrs
+
+
+  = f.actions
