@@ -12,6 +12,9 @@ gem 'haml-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'unicorn'
 
+gem 'execjs'
+gem 'therubyracer'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-stack_explorer'

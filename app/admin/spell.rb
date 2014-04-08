@@ -6,7 +6,6 @@ ActiveAdmin.register Spell do
     column :name
     column :uid
     column :area
-    column :time
     default_actions
   end
 
