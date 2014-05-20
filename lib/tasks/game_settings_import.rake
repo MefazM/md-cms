@@ -21,6 +21,11 @@ namespace :game_settings do
       print('.')
     end
 
+    GameSettings.create(
+      :value => game_settings_data['mana_storage_settings'].to_json,
+      :key => :mana_settings_per_level
+    )
+
     print("OK! \n")
   end
 end

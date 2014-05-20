@@ -1,0 +1,1 @@
+$gs = GameStatistics.new

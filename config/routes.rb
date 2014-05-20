@@ -5,4 +5,7 @@ GameCms::Application.routes.draw do
   root to: "admin/dashboard#index"
 
   post 'error_log_submit' => 'api/devise_errors#create'
+
+  get 'api/players_and_battles' => 'api/game_statistics#players_and_battles', :as => 'players_and_battles'
+  post 'api/statistics/report' => 'api/game_statistics#report'
 end

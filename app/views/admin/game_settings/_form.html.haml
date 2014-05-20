@@ -1,5 +1,8 @@
-%form{:action => admin_coins_earning_update_path, :method => :post}
+%form{:action => admin_game_settings_update_path, :method => :post}
   %input{:name => 'authenticity_token', :type => :hidden, :value => form_authenticity_token.to_s}
+
+  %h2 Coins
+
   %fieldset
     %legend Coin generator building:
     %select#buiding-uid{:name => :coin_generator_uid}
@@ -8,12 +11,11 @@
         %option{:value => building.uid, :selected => selected}=building.uid
 
   %fieldset
-    %legend Amount per level:
     %table
       %thead
-        %th Level
-        %th Amount per second
-        %th Max harvest capacity
+        %th level
+        %th amount per second
+        %th harvester capacity
       -settings[:coins_generation_per_level][:value].each_with_index do |value, index|
         %tr
           %td="##{index}"
@@ -30,15 +32,33 @@
         %option{:value => building.uid, :selected => selected}=building.uid
 
   %fieldset
-    %legend Storage capacity per level:
     %table
       %thead
-        %th Level
-        %th Capacity
+        %th level
+        %th storage capacity
       -settings[:storage_capacity_per_level][:value].each_with_index do |value, index|
         %tr
           %td="##{index}"
           %td
             %input{:name => :"storage_capacity_per_level[][amount]", :value => value['amount']}
+
+  %h2 Mana
+
+  %fieldset
+    %table
+      %thead
+        %th level
+        %th amount per second@shard
+        %th amount per second@battle
+        %th capacity
+      -settings[:mana_settings_per_level][:value].each_with_index do |value, index|
+        %tr
+          %td="##{index}"
+          %td
+            %input{:name => :"mana_settings_per_level[][amount_at_shard]", :value => value['amount_at_shard']}
+          %td
+            %input{:name => :"mana_settings_per_level[][amount_at_battle]", :value => value['amount_at_battle']}
+          %td
+            %input{:name => :"mana_settings_per_level[][capacity]", :value => value['capacity']}
 
   %input{:type => :submit, :value => 'save'}

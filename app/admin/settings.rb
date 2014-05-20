@@ -1,4 +1,4 @@
-ActiveAdmin.register_page "Coins Earning" do
+ActiveAdmin.register_page "Game settings" do
   content do
     settings = {}
     GameSettings.all.each do |gs|
@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Coins Earning" do
       }
     end
 
-    [:coins_generation_per_level, :storage_capacity_per_level].each do |field|
+    [:coins_generation_per_level, :storage_capacity_per_level, :mana_settings_per_level].each do |field|
       settings[field][:value] = JSON.parse(settings[field][:value])
     end
 
@@ -22,7 +22,7 @@ ActiveAdmin.register_page "Coins Earning" do
       option.save!
     end
 
-    [:coins_generation_per_level, :storage_capacity_per_level].each do |type|
+    [:coins_generation_per_level, :storage_capacity_per_level, :mana_settings_per_level].each do |type|
       option = GameSettings.find_by_key(type)
       option.value = params[type].to_json
       option.save!

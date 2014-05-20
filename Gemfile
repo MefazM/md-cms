@@ -15,6 +15,10 @@ gem 'unicorn'
 gem 'execjs'
 gem 'therubyracer'
 
+gem 'chartkick'
+
+gem 'redis', '2.1.1'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-stack_explorer'
