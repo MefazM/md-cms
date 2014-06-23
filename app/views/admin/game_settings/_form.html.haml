@@ -61,4 +61,34 @@
           %td
             %input{:name => :"mana_settings_per_level[][capacity]", :value => value['capacity']}
 
+  %h2 Score
+
+  %fieldset
+    %table
+      %thead
+        %th level
+        %th level at score
+        %th static reward
+      -settings[:player_settings_per_level][:value].each_with_index do |value, index|
+        %tr
+          %td="##{index}"
+          %td
+            %input{:name => :"player_settings_per_level[][level_at]", :value => value['level_at']}
+          %td
+            %input{:name => :"player_settings_per_level[][static_reward]", :value => value['static_reward']}
+
+
+
+  %h3 Fast battle
+  %fieldset
+    %table
+      %thead
+        %th score score_price
+        %th time period
+        %tr
+          -settings[:fast_battle][:value].each do |key, value|
+            %td
+              %input{:name => :"fast_battle[][#{key}]", :value => value}
+
+
   %input{:type => :submit, :value => 'save'}

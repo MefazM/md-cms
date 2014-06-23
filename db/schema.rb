@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225131002) do
+ActiveRecord::Schema.define(version: 20140602071511) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20140225131002) do
     t.integer  "depends_on_building_level"
     t.integer  "production_time"
     t.integer  "price"
+    t.integer  "score_price"
   end
 
   add_index "units", ["name"], name: "index_units_on_name", unique: true, using: :btree

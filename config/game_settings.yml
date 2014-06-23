@@ -1,3 +1,38 @@
+player_settings_per_level:
+  - level_at: 100
+    static_reward: 20
+
+  - level_at: 120
+    static_reward: 20
+
+  - level_at: 140
+    static_reward: 20
+
+  - level_at: 160
+    static_reward: 20
+
+  - level_at: 180
+    static_reward: 20
+
+  - level_at: 200
+    static_reward: 20
+
+  - level_at: 220
+    static_reward: 20
+
+  - level_at: 240
+    static_reward: 20
+
+  - level_at: 260
+    static_reward: 20
+
+  - level_at: 280
+    static_reward: 20
+
+  - level_at: 300
+    static_reward: 20
+
+
 mana_storage_settings:
   - amount_at_shard: 10
     amount_at_battle: 5
@@ -51,3 +86,12 @@ coins_production:
 
     - amount: 1.2
       harvest_capacity: 600
+
+# single settings
+fast_battle:
+  score_price: 300
+  time_period: 20000
+
+
+
+

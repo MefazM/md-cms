@@ -1,5 +1,4 @@
 require 'yaml'
-require 'pry'
 
 namespace :game_settings do
   desc "Import game settings from presets. WARNING! All old settings will dropped"
@@ -23,8 +22,16 @@ namespace :game_settings do
 
     GameSettings.create(
       :value => game_settings_data['mana_storage_settings'].to_json,
-      :key => :mana_settings_per_level
-    )
+      :key => :mana_settings_per_level)
+
+    GameSettings.create(
+      :value => game_settings_data['player_settings_per_level'].to_json,
+      :key => :player_settings_per_level)
+
+
+    GameSettings.create(
+      :value => game_settings_data['fast_battle'].to_json,
+      :key => :fast_battle)
 
     print("OK! \n")
   end
