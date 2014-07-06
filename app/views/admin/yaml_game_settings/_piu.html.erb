@@ -1,0 +1,12 @@
+<script type="text/javascript" >
+  window.settings_json_data = <%= game_settings_json.html_safe %>;
+</script>
+
+Version: <%= select_tag :json_version_select, options_for_select(versions, version) %> <br />
+
+<div id="jsoneditor"></div>
+
+<%= form_for :game_settings, url: 'yaml_game_settings/update', html: { id: 'json-form' } do |f| %>
+  <%= f.hidden_field :json %><br />
+  <%= f.submit %>
+<% end %>
