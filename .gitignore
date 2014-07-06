@@ -35,4 +35,4 @@
 ehthumbs.db
 Thumbs.db
 
-database.yml
+config/database.yml
