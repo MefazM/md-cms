@@ -1,4 +1,4 @@
-ActiveAdmin.register_page "YAML Game Settings" do
+ActiveAdmin.register_page "Game Settings" do
 
   page_action :update, method: :post do
     current_file = Rails.root + 'config/game_settings/game_settings.json'
@@ -11,7 +11,7 @@ ActiveAdmin.register_page "YAML Game Settings" do
     File.open(current_file, 'w+') { |file| file.puts json }
 
     flash[:notice] = "Updated!"
-    redirect_to :admin_yaml_game_settings
+    redirect_to :admin_game_settings
   end
 
   content do
@@ -27,7 +27,7 @@ ActiveAdmin.register_page "YAML Game Settings" do
     @version = params[:version] if versions.include? params[:version]
 
     @game_settings_json = File.read(Rails.root + "config/game_settings/#{@version}")
-    render partial: "piu", locals: { game_settings_json: @game_settings_json, versions: @versions_select, version: @version }
+    render partial: "form", locals: { game_settings_json: @game_settings_json, versions: @versions_select, version: @version }
   end
 
 
