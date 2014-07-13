@@ -202,7 +202,9 @@
     }
   },
   "unit_items_updates": {
-    "sword": [
+    "sword": {
+      "producer_uid": "updater_uid",
+      "levels":[
       {
         "title": "Wooden sword (dildo)",
         "price": 200,
@@ -215,7 +217,6 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -237,7 +238,6 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -259,14 +259,16 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
         }
       }
-    ],
-    "armor3": [
+      ]
+    },
+    "armor3": {
+      "producer_uid": "updater_uid",
+      "levels":[
       {
         "title": "Wooden sword (dildo)",
         "price": 200,
@@ -279,7 +281,6 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -301,7 +302,6 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -323,14 +323,16 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
         }
       }
-    ],
-    "staf": [
+      ]
+    },
+    "staf": {
+      "producer_uid": "updater_uid",
+      "levels":[
       {
         "title": "Wooden sword (dildo)",
         "price": 200,
@@ -343,7 +345,6 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -365,7 +366,6 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -387,14 +387,16 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
         }
       }
-    ],
-    "armor43": [
+      ]
+    },
+    "armor43": {
+      "producer_uid": "updater_uid",
+      "levels":[
       {
         "title": "Wooden sword (dildo)",
         "price": 200,
@@ -407,7 +409,6 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -429,7 +430,6 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -451,12 +451,12 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
-        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
         }
       }
-    ]
+      ]
+    }
   }
 }
