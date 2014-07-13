@@ -215,6 +215,7 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -236,6 +237,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -257,6 +259,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -276,6 +279,7 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -297,6 +301,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -318,6 +323,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -337,6 +343,7 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -358,6 +365,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -379,6 +387,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -398,6 +407,7 @@
           "movement_speed": 20,
           "melee_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -419,6 +429,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
@@ -440,6 +451,7 @@
           "range_attack_power_min": 20,
           "range_attack_speed": 20
         },
+        "producer_uid": "updater",
         "related_buildings": {
           "stables": 3,
           "barrack": 4
