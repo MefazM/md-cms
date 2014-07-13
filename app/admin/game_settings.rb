@@ -6,9 +6,9 @@ ActiveAdmin.register_page "Game Settings" do
 
     FileUtils.mv current_file, old_file
 
-    json = params[:game_settings][:json]
+    json = JSON.parse params[:game_settings][:json]
 
-    File.open(current_file, 'w+') { |file| file.puts json }
+    File.open(current_file, 'w+') { |file| file.puts JSON.pretty_generate(json) }
 
     flash[:notice] = "Updated!"
     redirect_to :admin_game_settings
