@@ -4,7 +4,7 @@
     -[:uid, :name, :description, :production_time, :price].each do |type|
       = f.input type
     - attack_types =  Unit::ATTACK_TYPES.map { |key, value| [value, key] }
-    = f.input :level, :as => :select, :collection => (1...5).each { |i|  }, :include_blank => false
+    = f.input :level, :as => :select, :collection => (1...20).each { |i|  }, :include_blank => false
 
 
   = f.actions

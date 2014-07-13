@@ -8,6 +8,9 @@ ActiveAdmin.register Building do
     column :name
     column :uid
     column :level
+
+    column :actions
+
     column :production_time
     column :price
 
