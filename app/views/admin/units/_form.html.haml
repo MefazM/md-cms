@@ -4,7 +4,7 @@
   = f.inputs do
     -[:uid, :name, :description, :movement_speed, :health_points, :production_time, :price, :score_price].each do |type|
       = f.input type
-    - attack_types =  Unit::ATTACK_TYPES.map { |key, value| [value, key] }
+    - attack_types =  Unit.updates
     = f.input :resist_type, :as => :select, :collection => attack_types
     -['melee_attack', 'range_attack'].each do |type|
       = f.input "#{type}"

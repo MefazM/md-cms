@@ -21,4 +21,12 @@ class Unit < ActiveRecord::Base
     Unit.where(:depends_on_building_uid => uid, :depends_on_building_level => level)
   end
 
+  def self.updates
+    game_settings_json = File.read(Rails.root + "config/game_settings/game_settings.json")
+    game_settings = JSON.parse game_settings_json
+
+    game_settings["unit_items_updates"].keys
+
+  end
+
 end

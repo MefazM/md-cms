@@ -206,11 +206,128 @@
         "name": "Wooden sword (dildo)",
         "description": "bla bla bla",
         "atk_types":{
+          "phys": 30
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20
+        }
+      },{
+        "name": "Plastic sword (dildo)",
+        "description": "bla2 bla2 bla2",
+        "atk_types":{
           "phys": 30,
+          "fire": 10,
+          "cold": 10,
+          "fists": 10
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      },{
+        "name": "Iron sword (dildo)",
+        "description": "bla3 bla3 bla3",
+        "atk_types":{
+          "phys": 30,
+          "fire": 10,
+          "fists": 10
         },
         "stats_modifier":{
           "movement_speed": 20,
           "melee_attack_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      }],
+      "armor3":[{
+        "name": "Wooden sword (dildo)",
+        "description": "bla bla bla",
+        "atk_types":{
+          "phys": 30
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20
+        }
+      },{
+        "name": "Plastic sword (dildo)",
+        "description": "bla2 bla2 bla2",
+        "atk_types":{
+          "phys": 30,
+          "fire": 10,
+          "cold": 10,
+          "fists": 10
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      },{
+        "name": "Iron sword (dildo)",
+        "description": "bla3 bla3 bla3",
+        "atk_types":{
+          "phys": 30,
+          "fire": 10,
+          "fists": 10
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      }],
+      "staf":[{
+        "name": "Wooden sword (dildo)",
+        "description": "bla bla bla",
+        "atk_types":{
+          "phys": 30
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20
+        }
+      },{
+        "name": "Plastic sword (dildo)",
+        "description": "bla2 bla2 bla2",
+        "atk_types":{
+          "phys": 30,
+          "fire": 10,
+          "cold": 10,
+          "fists": 10
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      },{
+        "name": "Iron sword (dildo)",
+        "description": "bla3 bla3 bla3",
+        "atk_types":{
+          "phys": 30,
+          "fire": 10,
+          "fists": 10
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20,
+          "range_attack_power_min": 20,
+          "range_attack_speed": 20
+        }
+      }],
+      "armor43":[{
+        "name": "Wooden sword (dildo)",
+        "description": "bla bla bla",
+        "atk_types":{
+          "phys": 30
+        },
+        "stats_modifier":{
+          "movement_speed": 20,
+          "melee_attack_speed": 20
         }
       },{
         "name": "Plastic sword (dildo)",
