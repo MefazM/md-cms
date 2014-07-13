@@ -204,7 +204,9 @@
   "unit_items_updates": {
     "sword": [
       {
-        "name": "Wooden sword (dildo)",
+        "title": "Wooden sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla bla bla",
         "atk_types": {
           "phys": 30
@@ -219,7 +221,9 @@
         }
       },
       {
-        "name": "Plastic sword (dildo)",
+        "title": "Plastic sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla2 bla2 bla2",
         "atk_types": {
           "phys": 30,
@@ -238,7 +242,9 @@
         }
       },
       {
-        "name": "Iron sword (dildo)",
+        "title": "Iron sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla3 bla3 bla3",
         "atk_types": {
           "phys": 30,
@@ -259,7 +265,9 @@
     ],
     "armor3": [
       {
-        "name": "Wooden sword (dildo)",
+        "title": "Wooden sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla bla bla",
         "atk_types": {
           "phys": 30
@@ -274,7 +282,9 @@
         }
       },
       {
-        "name": "Plastic sword (dildo)",
+        "title": "Plastic sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla2 bla2 bla2",
         "atk_types": {
           "phys": 30,
@@ -293,7 +303,9 @@
         }
       },
       {
-        "name": "Iron sword (dildo)",
+        "title": "Iron sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla3 bla3 bla3",
         "atk_types": {
           "phys": 30,
@@ -314,7 +326,9 @@
     ],
     "staf": [
       {
-        "name": "Wooden sword (dildo)",
+        "title": "Wooden sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla bla bla",
         "atk_types": {
           "phys": 30
@@ -329,7 +343,9 @@
         }
       },
       {
-        "name": "Plastic sword (dildo)",
+        "title": "Plastic sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla2 bla2 bla2",
         "atk_types": {
           "phys": 30,
@@ -348,7 +364,9 @@
         }
       },
       {
-        "name": "Iron sword (dildo)",
+        "title": "Iron sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla3 bla3 bla3",
         "atk_types": {
           "phys": 30,
@@ -369,7 +387,9 @@
     ],
     "armor43": [
       {
-        "name": "Wooden sword (dildo)",
+        "title": "Wooden sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla bla bla",
         "atk_types": {
           "phys": 30
@@ -384,7 +404,9 @@
         }
       },
       {
-        "name": "Plastic sword (dildo)",
+        "title": "Plastic sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla2 bla2 bla2",
         "atk_types": {
           "phys": 30,
@@ -403,7 +425,9 @@
         }
       },
       {
-        "name": "Iron sword (dildo)",
+        "title": "Iron sword (dildo)",
+        "price": 200,
+        "construction_time": 200,
         "description": "bla3 bla3 bla3",
         "atk_types": {
           "phys": 30,
