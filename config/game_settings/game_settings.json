@@ -162,27 +162,27 @@
     ],
     "coins_generation_per_level": [
       {
-        "amount": 0.2,
+        "amount": 30.2,
         "harvest_capacity": 100
       },
       {
-        "amount": 0.4,
+        "amount": 30.4,
         "harvest_capacity": 200
       },
       {
-        "amount": 0.6,
+        "amount": 30.6,
         "harvest_capacity": 300
       },
       {
-        "amount": 0.8,
+        "amount": 30.8,
         "harvest_capacity": 400
       },
       {
-        "amount": 1,
+        "amount": 31,
         "harvest_capacity": 500
       },
       {
-        "amount": 1.2,
+        "amount": 31.2,
         "harvest_capacity": 600
       }
     ]
@@ -199,264 +199,6 @@
     "circle_fire": {
       "units_to_kill": 10,
       "score_price": 50
-    }
-  },
-  "unit_items_updates": {
-    "sword": {
-      "producer_uid": "updater_uid",
-      "levels":[
-      {
-        "title": "Wooden sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla bla bla",
-        "atk_types": {
-          "phys": 30
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Plastic sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla2 bla2 bla2",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "cold": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Iron sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla3 bla3 bla3",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      }
-      ]
-    },
-    "armor3": {
-      "producer_uid": "updater_uid",
-      "levels":[
-      {
-        "title": "Wooden sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla bla bla",
-        "atk_types": {
-          "phys": 30
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Plastic sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla2 bla2 bla2",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "cold": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Iron sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla3 bla3 bla3",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      }
-      ]
-    },
-    "staf": {
-      "producer_uid": "updater_uid",
-      "levels":[
-      {
-        "title": "Wooden sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla bla bla",
-        "atk_types": {
-          "phys": 30
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Plastic sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla2 bla2 bla2",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "cold": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Iron sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla3 bla3 bla3",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      }
-      ]
-    },
-    "armor43": {
-      "producer_uid": "updater_uid",
-      "levels":[
-      {
-        "title": "Wooden sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla bla bla",
-        "atk_types": {
-          "phys": 30
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Plastic sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla2 bla2 bla2",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "cold": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      },
-      {
-        "title": "Iron sword (dildo)",
-        "price": 200,
-        "construction_time": 200,
-        "description": "bla3 bla3 bla3",
-        "atk_types": {
-          "phys": 30,
-          "fire": 10,
-          "fists": 10
-        },
-        "stats_modifier": {
-          "movement_speed": 20,
-          "melee_attack_speed": 20,
-          "range_attack_power_min": 20,
-          "range_attack_speed": 20
-        },
-        "related_buildings": {
-          "stables": 3,
-          "barrack": 4
-        }
-      }
-      ]
     }
   }
 }
