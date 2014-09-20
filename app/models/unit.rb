@@ -10,11 +10,11 @@ class Unit < ActiveRecord::Base
                   :depends_on_building_level, :production_time, :price, :score_price
 
   ATTACK_TYPES = {
-    1 => :arrow,
-    2 => :fire,
-    3 => :phys_damage,
-    4 => :axe,
-    5 => :fists
+    :arrow => 1,
+    :fire => 2,
+    :phys_damage => 3,
+    :axe => 4,
+    :fists => 5
   }
 
   def self.depended_on ( uid, level )

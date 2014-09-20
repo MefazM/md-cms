@@ -11,7 +11,7 @@ ActiveAdmin.register Spell do
 
   show do |song|
     attributes_table do
-      [:uid, :time, :description, :area, :mana_cost, :name].each do |type|
+      [:uid, :time, :description, :area, :mana_cost, :name, :client_description, :spellbook_timing].each do |type|
         row type
       end
 

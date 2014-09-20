@@ -1,7 +1,7 @@
 {
   "score_to_coins_modifier": 0.82,
   "loser_modifier": 0.1,
-  "game_rate": 1.1,
+  "game_rate": 3.1,
   "player_settings_per_level": [
     {
       "level_at": 3000,
@@ -107,7 +107,7 @@
       }
     },
     {
-      "level_at": 33000,
+      "level_at": 42000,
       "static_reward": 20,
       "obtained_items": {
         "coins": 200,
@@ -162,27 +162,27 @@
     ],
     "coins_generation_per_level": [
       {
-        "amount": 30.2,
+        "amount": 5.0,
         "harvest_capacity": 100
       },
       {
-        "amount": 30.4,
+        "amount": 5.0,
         "harvest_capacity": 200
       },
       {
-        "amount": 30.6,
+        "amount": 5.0,
         "harvest_capacity": 300
       },
       {
-        "amount": 30.8,
+        "amount": 5.0,
         "harvest_capacity": 400
       },
       {
-        "amount": 31,
+        "amount": 5.0,
         "harvest_capacity": 500
       },
       {
-        "amount": 31.2,
+        "amount": 5.0,
         "harvest_capacity": 600
       }
     ]
