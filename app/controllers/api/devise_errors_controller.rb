@@ -1,11 +1,20 @@
 class Api::DeviseErrorsController < ActionController::Base
 
-  before_action :find_player
+  # before_action :find_player
 
   def create
     device_error = DeviceError.new
-    error_fields = [:player_id, :error_message, :stack_trace, :memory, :model, :name, :architecture_info, :app_version_string, :max_texture_size, :platform_name]
-    error_fields.each do |field|
+
+    [:player_id,
+     :error_message,
+     :stack_trace,
+     :memory,
+     :model,
+     :name,
+     :architecture_info,
+     :app_version_string,
+     :max_texture_size,
+     :platform_name].each do |field|
       device_error.send("#{field}=", params[field])
     end
 
