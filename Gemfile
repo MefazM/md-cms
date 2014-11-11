@@ -21,6 +21,6 @@ gem 'redis', '2.1.1'
 
 group :development, :test do
   gem 'pry'
-  gem 'pry-stack_explorer'
-  gem 'pry-debugger'
+  # gem 'pry-stack_explorer'
+  # gem 'pry-debugger'
 end

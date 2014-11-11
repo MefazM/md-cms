@@ -120,33 +120,33 @@
   ],
   "mana_storage_settings": [
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 100
     },
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 200
     },
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 300
     },
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 400
     },
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 500
     },
     {
-      "amount_at_shard": 10,
-      "amount_at_battle": 5,
+      "income_at_shard": 10,
+      "income_at_battle": 5,
       "capacity": 600
     }
   ],
@@ -154,35 +154,35 @@
     "coin_generator_uid": "gold_mine",
     "storage_building_uid": "gold_storage",
     "storage_capacity_per_level": [
-      1000,
-      2000,
       3000,
-      4000,
-      5000
+      3000,
+      3000,
+      3000,
+      3000
     ],
     "coins_generation_per_level": [
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 100
       },
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 200
       },
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 300
       },
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 400
       },
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 500
       },
       {
-        "amount": 5.0,
+        "income": 1,
         "harvest_capacity": 600
       }
     ]
