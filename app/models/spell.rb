@@ -4,11 +4,8 @@ class Spell < ActiveRecord::Base
 
   validates_uniqueness_of :uid, :name
 
-  attr_accessible :uid, :time, :area, :mana_cost, :description, :spells_attrs_attributes, :name
+  attr_accessible :uid, :time, :area, :mana_cost, :description, :name, :slot_a, :slot_b, :slot_c, :slot_d, :opts_description
 
-  has_many :spells_attrs
-
-  accepts_nested_attributes_for :spells_attrs, :allow_destroy => true
 
   ELEMENTS = [
     :fire,

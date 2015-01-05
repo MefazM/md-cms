@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923074636) do
+ActiveRecord::Schema.define(version: 20150105193951) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -64,24 +64,6 @@ ActiveRecord::Schema.define(version: 20140923074636) do
 
   add_index "buildings", ["level", "uid"], name: "index_buildings_on_level_and_uid", unique: true, using: :btree
 
-  create_table "deferred_tasks", force: true do |t|
-    t.integer "user_id"
-    t.integer "finish_time"
-    t.integer "production_time"
-    t.integer "resource_id"
-    t.string  "package"
-    t.integer "level"
-  end
-
-  add_index "deferred_tasks", ["user_id", "resource_id"], name: "user_id", unique: true, using: :btree
-
-  create_table "deferred_tasks_with_sequences", force: true do |t|
-    t.integer "producer_id"
-    t.integer "production_time"
-    t.string  "resource_id",     limit: 32
-    t.integer "player_id"
-  end
-
   create_table "device_errors", force: true do |t|
     t.text     "error_message"
     t.text     "stack_trace"
@@ -98,11 +80,6 @@ ActiveRecord::Schema.define(version: 20140923074636) do
     t.datetime "updated_at"
   end
 
-  create_table "game_settings", force: true do |t|
-    t.text   "value"
-    t.string "key"
-  end
-
   create_table "players", force: true do |t|
     t.string "email"
     t.string "username"
@@ -110,51 +87,40 @@ ActiveRecord::Schema.define(version: 20140923074636) do
 
   create_table "spells", force: true do |t|
     t.string  "uid"
-    t.integer "time"
+    t.float   "time"
     t.text    "description"
     t.float   "area"
     t.integer "mana_cost"
     t.string  "name"
     t.string  "client_description"
-    t.integer "spellbook_timing"
+    t.float   "spellbook_timing"
+    t.float   "slot_a"
+    t.float   "slot_b"
+    t.float   "slot_c"
+    t.float   "slot_d"
+    t.text    "opts_description"
   end
 
   add_index "spells", ["uid"], name: "index_spells_on_uid", unique: true, using: :btree
-
-  create_table "spells_attrs", force: true do |t|
-    t.integer  "spell_id"
-    t.string   "key"
-    t.string   "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "units", force: true do |t|
     t.string   "uid"
     t.string   "name"
     t.string   "description"
     t.float    "movement_speed"
-    t.integer  "melee_attack_speed"
-    t.integer  "melee_attack_power_min"
-    t.float    "melee_attack_range"
     t.integer  "health_points"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "melee_attack_power_max"
-    t.boolean  "range_attack",              default: false
-    t.boolean  "melee_attack",              default: false
-    t.integer  "range_attack_power_max"
-    t.integer  "range_attack_power_min"
-    t.float    "range_attack_range"
-    t.integer  "range_attack_speed"
-    t.integer  "resist_type"
-    t.integer  "melee_attack_damage_type"
-    t.integer  "range_attack_damage_type"
     t.string   "depends_on_building_uid"
     t.integer  "depends_on_building_level"
     t.integer  "production_time"
     t.integer  "price"
     t.integer  "score_price"
+    t.float    "attack_speed"
+    t.float    "attack_range"
+    t.integer  "attack_power"
+    t.integer  "blockable_by"
+    t.boolean  "distance_attack",           default: false
   end
 
   add_index "units", ["name"], name: "index_units_on_name", unique: true, using: :btree

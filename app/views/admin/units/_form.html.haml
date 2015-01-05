@@ -1,19 +1,12 @@
-
-
 = semantic_form_for [:admin, @unit] do |f|
   = f.inputs do
-    -[:uid, :name, :description, :movement_speed, :health_points, :production_time, :price, :score_price].each do |type|
-      = f.input type
-    - attack_types =  Unit::ATTACK_TYPES
-    = f.input :resist_type, :as => :select, :collection => attack_types
-    -['melee_attack', 'range_attack'].each do |type|
-      = f.input "#{type}"
-      = f.input "#{type}_speed"
-      = f.input "#{type}_power_min"
-      = f.input "#{type}_power_max"
-      = f.input "#{type}_range"
-      = f.input "#{type}_damage_type", :as => :select, :collection => attack_types
+    -[:uid, :name, :description, :movement_speed, :health_points, :production_time, :price, :score_price, :blockable_by].each do |name|
+      = f.input name
+  = f.inputs do
+    -[:attack_speed, :attack_power, :attack_range, :distance_attack].each do |name|
+      = f.input name
 
+  = f.inputs do
     - building_uids = Building.all.pluck(:uid).uniq
     = f.input :depends_on_building_uid, :as => :select, :collection => building_uids
 
