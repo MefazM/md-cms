@@ -5,7 +5,7 @@
     = f.input :uid, :as => :select, :collection => spells_collection
 
   = f.inputs "Settings" do
-    - [:description, :mana_cost, :name, :area, :time, :client_description].each do |field|
+    - [:description, :mana_cost, :name, :area, :spellbook_timing, :time, :client_description].each do |field|
       = f.input field
 
 
